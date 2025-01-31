@@ -7,26 +7,23 @@ using namespace std;
  *
  * N: The number of years before Big Ben's Birthday
  */
-int solve(double N) {
+int solve(int N) {
     // YOUR CODE HERE
-    double total = 0;
-	total = 1/6*N*(N+1)*(2*N+1)-N;
-	//~ total = total*(N+1);
-	//~ total = total*(2*N+1)-N;
-	//~ total = total-(N*N)+N*(N-1);	
+    float total = 0;
+    for (float j=0; j<N; j++) {
+		total = total+j*j;
+	}
+	total = total+N*(N-1);		
     return total;
 }
 
 int main() {
-    double T;
-    cin >>T;
-    for (double i = 0; i < T; i++) {
-        double N;
+    int T;
+    cin >> T;
+    for (int i = 0; i < T; i++) {
+        int N;
         cin >> N;
         cout << solve(N) << '\n';
     }
     return 0;
 }
-
-//~ x = n-1
-//~ 1/6 x * x+1 * 2x+1 + N*(N-1)
